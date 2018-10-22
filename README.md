@@ -11,3 +11,4 @@ Even when you’re making an app that doesn’t have maps as the core functional
 In this tutorial we will cover how to integrate the Google Maps JavaScript SDK into an Ionic application.
 
 ### Follow the step-by-step instructions available here: https://ionicthemes.com/tutorials/about/add-google-maps-plus-places-and-geolocation-to-an-ionic-app
+# mbus
