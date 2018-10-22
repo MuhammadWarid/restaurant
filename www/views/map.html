@@ -1,0 +1,57 @@
+<ion-view view-title="MetroBus App">
+
+  <ion-content class="example-content">
+      <div class="row geolocation-row">
+        <div ng-click="tryGeoLocation()">
+          <!--  My Location? -->
+        </div>
+      </div> 
+
+    <div class="row row-no-padding map-row " >
+      <div class="col map-col">
+        <ng-map zoom="14" center="-25.953724,32.588711"> 
+          <directions draggable="true" travel-mode="WALKING" origin="current-location" destination="{{teste}}">
+          </directions>
+        </ng-map> 
+        <!-- <button class="col col button button-block button-positive" n>Verifique</button> -->
+      </div>
+    </div>
+    
+    <div class="panel panel-default">
+            <div class="panel-body">
+           <!--  <google-map  control="map.control" center="map.center" zoom="map.zoom">
+              <marker coords="marker.center"></marker>
+            </google-map> -->
+
+            <form class="form-horizontal" role="form">
+              <div class="form-group">
+                <!-- <label for="origin" class="col-sm-2 control-label">Origem</label>
+                <div class="col-sm-8">
+                  <input type="text" id="origin" class="form-control" ng-model="directions.origin" />
+                </div> -->
+              </div>
+              <div class="form-group">
+                <label for="destination" class="col-sm-2 control-label">Destino</label>
+                <div class="col-sm-8">
+                  <input type="text" id="destination" class="form-control" ng-model="directions.destination" />
+                </div>
+              </div>
+              <div class="form-group">
+                <div class="col-sm-offset-2 col-sm-8">
+                  <button class="col col button button-block button-positive" ng-click="getDirections()">Obter Direcções</button>
+                  
+                  <!-- <button class="col col button button-block button-positive"  ng-click="changeClass()">Reserve o teu bus</button> -->
+                  <user-info-card user="user1"></user-info-card>
+                  
+
+                 <!--  <button class="button" ng-class="{'active': isActive}" ng-click="activeButton()" type="button">Click Me to Toggle Class</button> --> 
+                </div>
+              </div>
+            </form>
+            
+            <div id="directionsList" ng-show="directions.showList" class="panel panel-primary"></div>
+          </div>
+        </div>
+
+  </ion-content>
+</ion-view>

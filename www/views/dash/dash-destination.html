@@ -1,0 +1,30 @@
+<ion-view view-title="MetroBus App" ng-controller="AjaxCtrl">
+  <ion-content class="padding">
+    <center>
+      <img class="logo" src="./img/metrobuslogo.png" alt="">
+      <h2>Bem Vindo ao MetroApp</h2>
+      <p>
+        Selecione a sua rota e a paragem mais proxima.</a>.
+      </p>
+    </center>
+    <label class="item item-input item-select">
+      <span class="input-label">Rota</span>
+      <select ng-model="item.route" ng-change="getBusstopNames(item.route)">
+        <option value=''>-seleccione-</option>
+        <option ng-repeat="route in routeNames" value="{{ route }} ">{{route}}</option>
+      </select>
+    </label>
+    <label class="item item-input item-select">
+      <span class="input-label">Paragem mais proxima</span>
+      <select ng-model="item.busstop" ng-change="getModelNames(item.route, item.busstop)" ng-disabled="!item.route">
+        <option value=''>-seleccione-</option>
+        <option ng-repeat="busstop in busstopNames" value="{{busstop}} ">{{busstop}}</option>
+      </select>
+    </label>
+    <center>
+      <button class="button button-positive" style="margin-top: 20px; width: 200px" ng-click="dashboardMap()">
+        Verifique
+      </button>
+    </center>
+  </ion-content>
+</ion-view>
