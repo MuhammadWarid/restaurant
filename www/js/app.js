@@ -34,29 +34,30 @@ angular.module('starter', [
 
   .config(function ($stateProvider, $urlRouterProvider) {
     $stateProvider
-
+      // start transport states 
       .state('map', {
         url: '/map',
-        templateUrl: "map.html",
+        templateUrl: "views/trans_map.html",
         controller: 'MapCtrl'
       })
 
       .state('booking', {
         url: '/booking',
-        templateUrl: "views/book.html"
+        templateUrl: "views/trans_book.html"
       })
 
       .state('result', {
         url: '/result',
-        templateUrl: "views/result.html"
+        templateUrl: "views/trans_result.html"
       })
+      // end transport states 
 
-      // start states for dashbord buttons
+      // start states for dashbord
       .state('dashboard', {
         url: '/dashboard',
-        // abstract: true,
         templateUrl: 'views/dash/dash-home.html'
       })
+
       .state('dashboard.destination', {
         url: '/destination',
         views: {
@@ -84,11 +85,13 @@ angular.module('starter', [
           }
         }
       })
-    // end states for dashboard buttons
-     .state('shop', {
+      // end states for dashboard
+
+      // start shop states
+      .state('shop', {
         url: '/app',
         abstract: true,
-        templateUrl: 'templates/menu.html',
+        templateUrl: 'views/shop_menu.html',
         controller: 'AppCtrl'
       })
 
@@ -96,7 +99,7 @@ angular.module('starter', [
         url: '/search',
         views: {
           'menuContent': {
-            templateUrl: 'templates/search.html'
+            templateUrl: 'views/shop_search.html'
           }
         }
       })
@@ -105,7 +108,7 @@ angular.module('starter', [
         url: '/browse',
         views: {
           'menuContent': {
-            templateUrl: 'templates/browse.html'
+            templateUrl: 'views/shop_browse.html'
           }
         }
       })
@@ -114,7 +117,7 @@ angular.module('starter', [
         url: '/home',
         views: {
           'menuContent': {
-            templateUrl: 'templates/home.html',
+            templateUrl: 'views/shop_home.html',
             controller: 'HomeCtrl'
           }
         }
@@ -124,7 +127,7 @@ angular.module('starter', [
         url: '/boots',
         views: {
           'menuContent': {
-            templateUrl: 'templates/boots.html',
+            templateUrl: 'views/shop_boots.html',
             controller: 'HomeCtrl'
           }
         }
@@ -134,7 +137,7 @@ angular.module('starter', [
         url: '/casual',
         views: {
           'menuContent': {
-            templateUrl: 'templates/casual.html',
+            templateUrl: 'views/shop_casual.html',
             controller: 'HomeCtrl'
           }
         }
@@ -144,7 +147,7 @@ angular.module('starter', [
         url: '/jordan',
         views: {
           'menuContent': {
-            templateUrl: 'templates/jordan.html',
+            templateUrl: 'views/shop_jordan.html',
             controller: 'HomeCtrl'
           }
         }
@@ -154,7 +157,7 @@ angular.module('starter', [
         url: '/formal',
         views: {
           'menuContent': {
-            templateUrl: 'templates/formal.html',
+            templateUrl: 'views/shop_formal.html',
             controller: 'HomeCtrl'
           }
         }
@@ -164,36 +167,40 @@ angular.module('starter', [
         url: '/order',
         views: {
           'menuContent': {
-            templateUrl: 'templates/sorder.html',
+            templateUrl: 'views/shop_sorder.html',
           }
         }
       })
-        .state('rest', {
-    url: '/rest',
-    abstract: true,
-    templateUrl: 'templates/rmenu.html',
-    controller: 'HomeCtrl'
-  })
+      // end shop states
 
-  .state('rest.mimmos', {
-      url: '/mimmos',
-      views: {
-        'menuContent': {
-          templateUrl: 'templates/rmimmos.html',
-          controller: 'HomeCtrl'
-        }
-      }
-    })
+      // start restaurantes states
+      .state('rest', {
+        url: '/rest',
+        abstract: true,
+        templateUrl: 'views/rest_menu.html',
+        controller: 'HomeCtrl'
+      })
 
-    .state('rest.restaurants', {
-      url: '/restaurants',
-      views: {
-        'menuContent': {
-          templateUrl: 'templates/rrestaurants.html',
-          controller: 'HomeCtrl'
+      .state('rest.mimmos', {
+        url: '/mimmos',
+        views: {
+          'menuContent': {
+            templateUrl: 'views/rest_mimmos.html',
+            controller: 'HomeCtrl'
+          }
         }
-      }
-    });
+      })
+
+      .state('rest.restaurants', {
+        url: '/restaurants',
+        views: {
+          'menuContent': {
+            templateUrl: 'views/rest_home.html',
+            controller: 'HomeCtrl'
+          }
+        }
+      });
+      // end restaurantes states
 
     $urlRouterProvider.otherwise('/dashboard/home');
   })

@@ -1,77 +1,16 @@
 angular.module('controllers', ['ui.router'])
-
-
-
-
-  // .controller('mainCtrl', function($scope) {
-  //   $scope.user = {
-  //     level: 0
-  //   }
-  // })
-
-
-
-
-
-
   // controller to populate start
   .controller('AjaxCtrl', ['$scope', '$stateParams', '$state', function ($scope, $stateParams, $state) {
     $scope.master = { firstName: "John", lastName: "Doe" };
+    
     // item.busstop = "kkkkkkkkkk";
-
     $scope.item = {
       route: '',
       busstop: '',
       model: ''
     };
 
-    // Our hierarchical object of manufacturers, car sizes and model names
-    // $scope.routes = {
-    //   "Estacao Central - Costa do Sol": {
-    //     "Ministerio da Justica": ["1"],
-    //     "Polana Shopping": ["2"],
-    //     "Barclays": ["3"],
-    //     "Cinema Xenon": ["4"],
-    //     "Bombas Total": ["5"],
-    //     "Destacamento Femenino": ["6"],
-    //     "Centro de Conferencias": ["7"],
-    //     "Maritimo": ["8"],
-    //     "Baia Mall": ["9"],
-    //     "Mercado do Peixe": ["10"],
-    //     "Baia Mall": ["11"],
-    //     "Triunfo": ["12"]
-    //   },
-    //   "Estacao Central - Expresso C do Sol": {
-    //     "Naval": ["1"],
-    //     "Southern Su": ["2"],
-    //     "Maritimo": ["3"],
-    //     "Baia Mall": ["4"],
-    //     "Mercado do Peixe": ["5"],
-    //     "Triunfo": ["6"]
-    //   },
-    //   "Estacao central - Museu": {
-    //     "Pandora": ["1"],
-    //     "HCM": ["2"],
-    //     "Oftalmologia": ["3"],
-    //     "Milano": ["4"],
-    //     "Cemiterio": ["5"]
-    //   },
-    //   "Estacao central - OMM": {
-    //     "Muncipio": ["1"],
-    //     "Ministerio do Trabalho": ["2"],
-    //     "Ronil": ["3"],
-    //     "Banco Unico": ["4"],
-    //     "Marien Ngouabi": ["5"],
-    //     "Capuchinho": ["6"],
-    //     "PH7 Coop": ["7"],
-    //     "OMM": ["8"],
-    //     "Icor": ["9"],
-    //     "TDM": ["10"]
-    //   },
-    // };
-
     // second Array Start
-
     $scope.routes = {
       "Estacao Central - Costa do Sol": {
         "Ministério da Justiça, Assuntos Constitucionais e Religiosos, Maputo, Moçambique": ["1"],
@@ -114,9 +53,7 @@ angular.module('controllers', ['ui.router'])
         "Instituto Do Coração - ICOR, Maputo": ["9"],
         "TDM Conference Center": ["10"]
       },
-    };// second Array End 
-
-
+    };
 
     $scope.routeNames = [];
     for (route in $scope.routes)
@@ -269,53 +206,7 @@ angular.module('controllers', ['ui.router'])
         return marker;
       },
       createCluster = function (markers) {
-        // var markerClusterer = new MarkerClusterer($scope.mymap, markers, {
-        // $scope.markers_cluster = new MarkerClusterer($scope.mymap, markers, {
-        //   styles: [
-        //     {
-        //       url: '../img/i1.png',
-        //       height: 53,
-        //       width: 52,
-        //       textColor: '#FFF',
-        //       textSize: 12
-        //     },
-        //     {
-        //       url: '../img/i2.png',
-        //       height: 56,
-        //       width: 55,
-        //       textColor: '#FFF',
-        //       textSize: 12
-        //     },
-        //     {
-        //       url: '../img/i3.png',
-        //       height: 66,
-        //       width: 65,
-        //       textColor: '#FFF',
-        //       textSize: 12
-        //     },
-        //     {
-        //       url: '../img/i4.png',
-        //       height: 78,
-        //       width: 77,
-        //       textColor: '#FFF',
-        //       textSize: 12
-        //     },
-        //     {
-        //       url: '../img/i5.png',
-        //       height: 90,
-        //       width: 89,
-        //       textColor: '#FFF',
-        //       textSize: 12
-        //     }
-        //   ],
-        //   imagePath: '../img/i'
-        // });
       };
-
-
-
-
-
 
     // Clean map
     cleanMap();
@@ -512,7 +403,7 @@ angular.module('controllers', ['ui.router'])
       }
     }
   })
-    // END OF DIRECTIVE
+  // END OF DIRECTIVE
 
   .controller('AppCtrl', function ($scope, $ionicModal, $timeout, $state) {
 
@@ -563,7 +454,7 @@ angular.module('controllers', ['ui.router'])
       { title: 'Jordan', img: 'img/jordan/jordan1.png' },
       { title: 'Formal', img: 'img/formal/formal1.jpg' }
     ];
-    
+
     $scope.boots = [
       { title: 'Classy Boots', img: 'img/boots/boot1.jpg' },
       { title: 'Chelsea Boots', img: 'img/boots/boot2.jpg' },
@@ -577,7 +468,7 @@ angular.module('controllers', ['ui.router'])
       { title: 'Grey Color boots', img: 'img/casual/casual3.jpg' },
       { title: 'Big boy leather', img: 'img/casual/casual4.jpg' }
     ];
-    
+
     $scope.jordans = [
       { title: 'Classy Boots', img: 'img/jordan/jordan1.png' },
       { title: 'Chelsea Boots', img: 'img/jordan/jordan2.png' },
@@ -593,13 +484,12 @@ angular.module('controllers', ['ui.router'])
     ];
 
     $scope.items = [
-    {title: 'Pepperoni Pizza', img: "../img/pizza.jpg", price: 300},
-    {title: 'Item 1', img: "../img/pizza.jpg", price: 300},
-     {title: 'Item 1', img: "../img/pizza.jpg", price: 300},
-     {title: 'Item 1', img: "../img/pizza.jpg",price: 300 },
-     {title: 'Item 1', img: "../img/pizza.jpg",price: 300},
-     {title: 'Item 1', img: "../img/pizza.jpg",price: 300},
-     {title: 'Item 1', img: "../img/pizza.jpg",price: 300}
-    
-  ];
+      { title: 'Pepperoni Pizza', img: "../img/pizza.jpg", price: 300 },
+      { title: 'Item 1', img: "../img/pizza.jpg", price: 300 },
+      { title: 'Item 1', img: "../img/pizza.jpg", price: 300 },
+      { title: 'Item 1', img: "../img/pizza.jpg", price: 300 },
+      { title: 'Item 1', img: "../img/pizza.jpg", price: 300 },
+      { title: 'Item 1', img: "../img/pizza.jpg", price: 300 },
+      { title: 'Item 1', img: "../img/pizza.jpg", price: 300 }
+    ];
   })
