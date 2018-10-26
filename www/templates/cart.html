@@ -18,16 +18,22 @@
      <ion-item class="item item-thumbnail-left" ng-repeat="item in cart.cartStorage.items">  
               <img ng-src="{{item.img}}" style="border-radius:50%;">                
               <h2>{{item.name}}</h2> 
-              <h4 >{{item.price | currency}}</h4>
+              <h4 >{{item.price }} MZN</h4>
               <h4>{{item.quantity}}</h4>
-              <button ng-click="cart.increaseItemAmount(item)">+</button>
-                        <button ng-click="cart.decreaseItemAmount(item)">-</button>
-                        <button ng-click="cart.removeFromCart(item)">Remove from Cart</button>
+              <button ng-click="cart.increaseItemAmount(item, total)" class="button button-positive">+</button>
+              <button ng-click="cart.decreaseItemAmount(item)" class="button button-assertive">-</button>
+              <button ng-click="cart.removeFromCart(item)" class="button button-assertive">Remove from Cart</button>
+                <h2>Total: {{item.total}}</h2>
+
+
 
   </ion-item>
+          <h1>Grand Total: {{ sum}}</h1>
+  
 <br>
 
   </ion-list>
+</div>
   </ion-content>
 </ion-view>
 
