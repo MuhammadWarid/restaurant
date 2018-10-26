@@ -1,4 +1,4 @@
-angular.module('starter.controllers', [])
+ angular.module('starter.controllers', [])
 
 .controller('AppCtrl', function($scope, $ionicModal, $timeout) {
 
@@ -53,4 +53,101 @@ angular.module('starter.controllers', [])
 })
 
 .controller('PlaylistCtrl', function($scope, $stateParams) {
-});
+})
+
+
+.value('cartStorage', {
+    items: []
+})
+
+
+.controller('mainController', function(cartStorage) {
+    var _this = this;
+    _this.cartStorage = cartStorage;
+
+    _this.items = [{
+        name: 'Pepperoni Pizza',
+        price: .5,
+        img: "../img/pizza.jpg",
+        select: {i1 : "small", i2 : "medium", i3: "Large"},
+        quantity: 0,
+        showAddToCart: false,
+        addedToCart: false
+    }, {
+        name: 'Margharita Pizza',
+        price: .5,
+        img: "../img/pizza1.jpg",
+        select: {i1 : "small", i2 : "medium", i3: "Large"},
+        quantity: 0,
+        showAddToCart: false,
+        addedToCart: false
+    }, {
+        name: 'BBQ Chicken',
+        price: 1,
+        img: "../img/pizza2.jpg",
+        select: {i1 : "small", i2 : "medium", i3: "Large"},
+        quantity: 0,
+        showAddToCart: false,
+        addedToCart: false
+    }];
+    
+    _this.addToCart = function(item) {
+        _this.cartStorage.items.push(item);
+        item.addedToCart = true;
+    }
+
+    _this.increaseItemAmount = function(item) {
+        item.quantity++;
+        item.showAddToCart = true;
+    }
+
+    _this.decreaseItemAmount = function(item) {
+        item.quantity--;
+        if (item.quantity <= 0) {
+            item.quantity = 0;
+            item.addedToCart = false;
+            item.showAddToCart = false;
+            var itemIndex = _this.cartStorage.items.indexOf(item);
+            if (itemIndex > -1) {
+                _this.cartStorage.items.splice(itemIndex, 1);
+            }
+        } else {
+            item.showAddToCart = true;
+        }
+    }
+})
+
+
+
+.controller('cartController', function(cartStorage) {
+    var _this = this;
+    _this.cartStorage = cartStorage;
+
+    _this.increaseItemAmount = function(item) {
+        item.quantity++;
+    }
+
+    _this.decreaseItemAmount = function(item) {
+        item.quantity--;
+        if (item.quantity <= 0) {
+            item.quantity = 0;
+            item.addedToCart = false;
+            item.showAddToCart = false;
+            var itemIndex = _this.cartStorage.items.indexOf(item);
+            if (itemIndex > -1) {
+                _this.cartStorage.items.splice(itemIndex, 1);
+            }
+        }
+    }
+
+    _this.removeFromCart = function(item) {
+        item.quantity = 0;
+        item.addedToCart = false;
+        item.showAddToCart = false;
+        var itemIndex = _this.cartStorage.items.indexOf(item);
+        if (itemIndex > -1) {
+            _this.cartStorage.items.splice(itemIndex, 1);
+        }
+    }
+})
+

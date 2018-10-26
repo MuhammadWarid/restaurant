@@ -1,0 +1,50 @@
+
+<ion-view view-title="Mimmos" scroll="true" class="bghome"> 
+	<ion-content>
+  <br>
+<button class="button button-positive icon ion-star"ui-sref="app.search" >Cart</button>
+<h1 class="restitle"> Menu </h1>
+		
+
+
+
+
+  <div ng-controller="mainController as main">
+     
+        <div>
+         <ion-list ng-repeat="item in main.items">
+     		<ion-item class="item item-thumbnail-left" >  
+              <img ng-src="{{item.img}}" style="border-radius:50%;">                
+              <p><h2>{{item.name}}</h2></p> 
+              <h4 >{{item.price | currency}}</h4>
+              <h4>{{item.quantity}}</h4>
+              <select class="dropdown">
+				      <option>{{item.select.i1}}</option>
+				      <option selected>{{item.select.i2}}</option>
+				      <option>{{item.select.i3}}</option>
+    			</select>
+    			<button ng-click="main.increaseItemAmount(item)">+</button>
+                 <button ng-click="main.decreaseItemAmount(item)">-</button>
+                 <button ng-click="main.addToCart(item)" ng-show="item.showAddToCart && !item.addedToCart">Add to Cart</button>
+			
+    			
+
+
+				</ion-item>
+			<br>
+
+  			</ion-list>
+          
+</ion-content>
+
+</ion-view>
+<!-- <ion-view view-title="Mimmos" scroll="true" class="bghome">
+<ion-content>
+	<div ng-controller="cntrl2">
+		<h1>{{title}}</h1>
+	</div>
+	<input ng-model="sampledata"/>
+	<button ng-click="SendData()">Send</button>
+	<button class="button" ui-sref="app.search" >Place Order</button>
+</ion-content>
+</ion-view> -->
