@@ -9,46 +9,59 @@
   <link data-require="bootstrap-css@3.2.0" data-semver="3.2.0" rel="stylesheet" href="//maxcdn.bootstrapcdn.com/bootstrap/3.2.0/css/bootstrap.min.css" />
   <link href="css/ionic.app.css" rel="stylesheet">
   <style>
-    .bar-metro {
-      background-color: #fdb813;
+    a:hover.theLink {
+      color: black;
     }
 
-    .tab-metro {
-      background-color: #1a4388;
+    a:link.theLink, a:visited.theLink {
+      background-color: #f44336;
+      color: white;
+      text-align: center;
+      text-decoration: none;
+    }
+
+    .theLink span {
+      font-size: 2.5em;
+      position: relative;
+      top: 10vh;
+    }
+  
+    .theItem {
+      display: block;
+      position: relative;
+      top: 10vh;
+    }
+
+    .theItem i {
+      font-size: 2.5em;
+    }
+
+    .theCard1 {
+      width: 100vw;
+      height: 40vh;
+      padding: .5em;
+      background: #fff;
+      float: right;
+      box-shadow: 2px 2px 5px #000;
+    }
+
+    .theCard1 div {
+      top: 10vh;
+      position: relative;
+      text-align: center;
+    }
+    
+    .theCard {
+      width: 50vw;
+      height: 30vh;
+      background-color: rgba(255, 0, 0, 0.6);
+      float: right;
+      border: 5px solid white;
+      border-style: hidden;
     }
 
     .logo {
       width: 100px;
-      height: 100px;
-    }
-
-    .form-control {
-      display: block;
-      width: 100%;
-      height: 34px;
-      padding: 6px 12px;
-      font-size: 14px;
-      line-height: 1.42857143;
-      color: #555;
-      background-color: #fff;
-      background-image: none;
-      border: 1px solid #ccc;
-      border-radius: 4px;
-      -webkit-box-shadow: inset 0 1px 1px rgba(0, 0, 0, .075);
-      box-shadow: inset 0 1px 1px rgba(0, 0, 0, .075);
-      -webkit-transition: border-color ease-in-out .15s, -webkit-box-shadow ease-in-out .15s;
-      -o-transition: border-color ease-in-out .15s, box-shadow ease-in-out .15s;
-      transition: border-color ease-in-out .15s, box-shadow ease-in-out .15s;
-    }
-
-    .overlay {
-      position: fixed;
-      width: 100%;
-      height: 100%;
-      background: rgba(0, 0, 0, 0.7);
-      z-index: 99999;
-      top: 0;
-      left: 0;
     }
 
     .thumbnail {
@@ -56,23 +69,25 @@
       border: none;
     }
 
+    .slogan {
+      font-weight: bold;
+    }
+
     .bg {
       background: url('img/sativa.png');
     }
 
-    .mapa{
+    .mapa {
       position: relative;
       top: 50px;
       left: 0px;
       border-radius: 20px;
       width: 223px;
-
       height: 31px;
-
       padding-left: 33px;
+    }
 
-      }
-       map {
+    map {
       margin-top: -44px;
       height: 90vh;
     }

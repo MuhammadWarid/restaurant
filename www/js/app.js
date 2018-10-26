@@ -80,7 +80,7 @@ angular.module('starter', [
         url: '/map/:destination',
         views: {
           'tab-map': {
-            templateUrl: 'views/map.html',
+            templateUrl: 'views/trans_map_.html',
             controller: 'MapCtrl'
           }
         }
@@ -89,7 +89,7 @@ angular.module('starter', [
 
       // start shop states
       .state('shop', {
-        url: '/app',
+        url: '/shop',
         abstract: true,
         templateUrl: 'views/shop_menu.html',
         controller: 'AppCtrl'
@@ -167,7 +167,7 @@ angular.module('starter', [
         url: '/order',
         views: {
           'menuContent': {
-            templateUrl: 'views/shop_sorder.html',
+            templateUrl: 'views/shop_sorder.html'
           }
         }
       })
@@ -178,7 +178,7 @@ angular.module('starter', [
         url: '/rest',
         abstract: true,
         templateUrl: 'views/rest_menu.html',
-        controller: 'HomeCtrl'
+        controller: 'AppCtrl'
       })
 
       .state('rest.mimmos', {
@@ -187,6 +187,15 @@ angular.module('starter', [
           'menuContent': {
             templateUrl: 'views/rest_mimmos.html',
             controller: 'HomeCtrl'
+          }
+        }
+      })
+
+      .state('rest.search', {
+        url: '/search',
+        views: {
+          'menuContent': {
+            templateUrl: 'views/rest_cart.html'
           }
         }
       })
